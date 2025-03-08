@@ -1,6 +1,6 @@
 ---
 title: Git基本使用方法
-published: 2025-1-9
+published: 2025-01-09
 description: 'Git基本使用方法'
 image: ''
 tags: [学习]
