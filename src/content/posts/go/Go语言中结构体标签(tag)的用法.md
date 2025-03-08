@@ -2,7 +2,7 @@
 title: Go语言中结构体标签（tag）的用法
 published: 2025-02-08
 description: '结构体标签（tag）是Go语言中一种为结构体字段提供额外元数据的机制。它们通常用于JSON序列化/反序列化、数据库映射等场景。'
-image: './luanpo.png'
+image: './little_tifa.jpg'
 tags: [go, 学习, json]
 category: 'go'
 draft: false 

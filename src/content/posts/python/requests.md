@@ -2,7 +2,7 @@
 title: python中requests的基本用法
 published: 2024-02-12
 description: 'python爬虫中常用的网页解析库及基本用法。'
-image: './liuying.png'
+image: './ff7.jpg'
 tags: [python, 学习, 爬虫]
 category: 'python'
 draft: false 

@@ -2,7 +2,7 @@
 title: java学习笔记（1）
 published: 2025-03-07
 description: 'Java学习之路'
-image: './starrail.png'
+image: './img/Alice.jpg'
 tags: [java, 学习, default, 枚举, 堆, 抽象类, 接口类, instanceof]
 category: 'java'
 draft: false 
