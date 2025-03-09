@@ -1,5 +1,5 @@
 ---
-title: java学习笔记（1）
+title: Java学习笔记（1）
 published: 2025-03-07
 description: 'Java学习之路'
 image: './img/Alice.jpg'

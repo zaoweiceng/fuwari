@@ -7,8 +7,6 @@ tags: [java, 学习]
 category: 'java'
 draft: false 
 ---
-# Java String 类
-
 字符串广泛应用 在 Java 编程中，在 Java 中字符串属于对象，Java 提供了 String 类来创建和操作字符串。
 
 ### String 基础用法

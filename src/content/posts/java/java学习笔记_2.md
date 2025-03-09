@@ -1,5 +1,5 @@
 ---
-title: java学习笔记（2）
+title: Java学习笔记（2）
 published: 2025-03-08
 description: 'Java学习之路'
 image: './img/Tifa.PNG'
