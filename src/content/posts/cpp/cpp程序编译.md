@@ -2,7 +2,7 @@
 title: c++程序编译
 published: 2024-05-09
 description: '使用g++对c++程序编译，基本的命令介绍'
-image: './cover.jpeg'
+image: './img/cover.jpeg'
 tags: [c++, 学习]
 category: 'cpp'
 draft: false 
