@@ -49,16 +49,24 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Download Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: ${{ needs.build.outputs.artifact-name }}
-
-      - name: Deploy to Server via SCP
+      - name: Deploy on Server
         uses: appleboy/scp-action@v0.1.6
         with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          source: "dist/*"  # 匹配 Astro 的输出目录
-          target: ${{ secrets.DEPLOY_PATH }}
+        host: ${{ secrets.SERVER_IP }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.SERVER_SSH_KEY }}
+        source: "dist/"  # 静态文件目录
+        target: ${{ secrets.DEPLOY_PATH }}
+      # - name: Download Artifact
+      #   uses: actions/download-artifact@v4
+      #   with:
+      #     name: ${{ needs.build.outputs.artifact-name }}
+
+      # - name: Deploy to Server via SCP
+      #   uses: appleboy/scp-action@v0.1.6
+      #   with:
+      #     host: ${{ secrets.SERVER_IP }}
+      #     username: ${{ secrets.SERVER_USER }}
+      #     key: ${{ secrets.SERVER_SSH_KEY }}
+      #     source: "dist/*"  # 匹配 Astro 的输出目录
+      #     target: ${{ secrets.DEPLOY_PATH }}
