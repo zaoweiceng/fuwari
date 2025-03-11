@@ -2,7 +2,7 @@
 title: go语言学习笔记（1）
 published: 2024-08-10
 description: 'go语言学习之路'
-image: './luanpo.png'
+image: './luanpo.jpeg'
 tags: [go, 学习]
 category: 'go'
 draft: false 

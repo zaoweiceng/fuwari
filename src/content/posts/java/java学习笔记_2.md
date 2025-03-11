@@ -2,7 +2,7 @@
 title: Java学习笔记（2）
 published: 2025-03-08
 description: 'Java学习之路'
-image: './img/Tifa.PNG'
+image: './img/Tifa.jpg'
 tags: [java, 学习]
 category: 'java'
 draft: false 

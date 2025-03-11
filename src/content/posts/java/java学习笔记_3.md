@@ -6,7 +6,7 @@ published: 2025-03-09
 
 description: 'Java学习之路'
 
-image: './img/Alice_3.PNG'
+image: './img/Alice_3.jpeg'
 
 tags: [java, 学习]
 

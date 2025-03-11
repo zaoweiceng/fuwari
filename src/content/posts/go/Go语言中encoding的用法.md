@@ -2,7 +2,7 @@
 title: Go语言中encoding的用法——Binary
 published: 2025-02-12
 description: 'encoding/binary是Go语言标准库中的一个包，用于实现数据的二进制编码和解码。这个包主要提供了将数据以大端或小端格式进行编码和解码的功能。'
-image: './liuying.png'
+image: './liuying.jpeg'
 tags: [go, 学习, encoding]
 category: 'go'
 draft: false 
