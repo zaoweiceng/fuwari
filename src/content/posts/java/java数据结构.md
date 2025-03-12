@@ -168,7 +168,14 @@ HashMap<Integer, String> Sites = new HashMap<Integer, String>();
 - **特点：** 基于红黑树实现的有序键值对存储结构。
 - **优点：** 有序，支持按照键的顺序遍历。
 - **缺点：** 插入和删除相对较慢。
-
+```java
+ThreeMap<Integer, String> tm = new TreeMap<>(new Comparator<Integer>(){
+  @Override
+  public int compare(Integer o1, Integer o2){
+    return o2-o1;
+  }
+});
+```
 ## 栈（Stack）
 
 栈（Stack）是一种线性数据结构，它按照后进先出（Last In, First Out，LIFO）的原则管理元素。在栈中，新元素被添加到栈的顶部，而只能从栈的顶部移除元素。这就意味着最后添加的元素是第一个被移除的。
