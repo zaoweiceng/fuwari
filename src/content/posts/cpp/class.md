@@ -9,7 +9,7 @@ image: './img/ml.JPG'
 
 tags: [C++, 学习, 虚函数]
 
-category: 'C++'
+category: 'cpp'
 
 draft: false 
 ---

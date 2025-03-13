@@ -9,7 +9,7 @@ image: './img/pc.png'
 
 tags: [C++, 学习, 函数]
 
-category: 'C++'
+category: 'cpp'
 
 draft: false 
 ---

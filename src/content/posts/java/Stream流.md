@@ -46,7 +46,11 @@ Srream.of(arr); // 可变参类型，如果传递的是数组，那么数组必�
 
 ### 中间操作
 
-中间操作会返回一个新的Stream，允许操作链继续下去。常见的中间操作包括：
+中间操作会返回一个新的Stream，允许操作链继续下去。
+
+**注意：流中进行的修改不会影响原数据**
+
+常见的中间操作包括：
 
 | 方法名                                          | 说明                                                       |
 | ----------------------------------------------- | ---------------------------------------------------------- |
@@ -56,29 +60,82 @@ Srream.of(arr); // 可变参类型，如果传递的是数组，那么数组必�
 | static <T> Stream<T> concat(Stream a, Stream b) | 合并a和b两个流为一个流                                     |
 | Stream<T> distinct()                            | 返回由该流的不同元素（根据Object.equals(Object) ）组成的流 |
 | Stream<T> map(Function<T, R>)                   | 转换元素。                                                 |
-|                                                 |                                                            |
 
-例如，过滤出长度大于4的字符串，并将其转换为大写：
+例如：
 
 ```java
+// 过滤出长度大于4的字符串，并将其转换为大写
 List<String> result = list.stream()
                           .filter(s -> s.length() > 4)
                           .map(String::toUpperCase)
                           .collect(Collectors.toList());
+Stream.concat(list1.stream(), list2.stream()).collect(Collectors.toList());
+
+list.stream().map(new Function<String, Integer>(){
+    @Override
+    public Integer apply(String s){
+    	String[] arr = s.split("-");
+        return Integer.parseInt(arr[1]);
+    }
+}).forEach(s -> System.out.println(s));
+
+list.stream()
+    .map(s -> Integer.parseInt(s.split("-")[1]))
+    .forEach(s -> System.out.println(s));
 ```
 ### 终端操作
+
 终端操作会触发Stream的执行，并产生一个结果或副作用。常见的终端操作包括：
 - `collect(Collector<T, A, R>)`：收集元素到另一个集合中。
+- `toArray(IntFunction<? extends Object[]>)`: 转为数组。
 - `reduce(T, BinaryOperator<T>)`：将元素聚合为一个值。
 - `forEach(Consumer<T>)`：对每个元素执行操作。
 - `count()`：返回元素数量。
 - `findFirst()` / `findAny()`：返回第一个或任意一个元素。
 - `anyMatch(Predicate<T>)` / `allMatch(Predicate<T>)` / `noneMatch(Predicate<T>)`：检查是否有元素匹配给定条件。
-例如，计算所有字符串长度的总和：
+例如：
 ```java
+//计算所有字符串长度的总和
 int totalLength = list.stream()
                       .mapToInt(String::length)
-                      .sum();
+                      .count();
+
+// toArray
+String[] arr = list.stream().toArray(new IntFunction<String[]>(){
+    @Override
+    public String[] apply(int value){
+        return new String[value];
+    }
+});
+
+String[] arr = list.stream()
+    .toArray(v->new String[value]);
+
+List<String> newlist = list.stream()
+    .filer(s->"男".equals(s))
+    .collect(Collectors.toList());
+
+//姓名-性别-ID
+// 使用map，map中的键不能重复
+Map<String, Integer> map = list.stream()
+    .filter(s -> "男".equals(s.split("-")[1]))
+    .collect(Collectors.toMap(new Function<String, String>(){
+        @Override
+        public String apply(String s) {
+            return s.split("-")[0];
+        }
+    },new Function<String, Integer>(){
+        @Override
+        public Integer apply(String s) {
+            return Integer.parseInt(s.split("-")[2]);
+        }
+    }));
+
+Map<String, Integer> map = list.stream()
+    .filter(s -> "男".equals(s.split("-")[1]))
+    .collect(Collectors.toMap(
+        s->s.split("-")[0],
+        s-> Integer.parseInt(s.split("-")[2])));
 ```
 ### 短路操作
 短路操作可以提前结束Stream的遍历。例如：
