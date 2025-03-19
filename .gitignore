@@ -23,5 +23,6 @@ pnpm-debug.log*
 .vercel
 
 package-lock.json
+src/components/Footer.astro
 bun.lockb
 yarn.lock
