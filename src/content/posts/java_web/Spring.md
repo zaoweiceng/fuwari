@@ -2,7 +2,7 @@
 title: Spring框架
 published: 2025-03-18
 description: 'Java Spring Boot是一个基于Spring框架的开源项目，旨在简化Spring应用的创建、配置和部署过程。'
-tags: [java, 学习]
+tags: [java, 学习, spring]
 category: 'java'
 draft: false 
 ---
